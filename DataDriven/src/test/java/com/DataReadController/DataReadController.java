@@ -4,7 +4,7 @@ import Xls_Reader_Package.Xls_Reader;
 
 public class DataReadController {
 	
-Xls_Reader reader = new Xls_Reader("E:\\Andriod studio\\eclips 2019\\works\\DataDriven\\src\\test\\java\\com\\UserData\\UserInfoData.xlsx");
+Xls_Reader reader = new Xls_Reader("E:\\peopleNtech\\WebAutomationGit\\Website-automation\\DataDriven\\src\\test\\java\\com\\UserData\\UserInfoData.xlsx");
 	
 	
 

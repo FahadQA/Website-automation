@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18040" started-at="2020-03-22T22:09:12 BDT" finished-at="2020-03-22T22:09:30 BDT">
+  <suite name="Default suite" duration-ms="24323" started-at="2020-03-22T22:24:47 BDT" finished-at="2020-03-22T22:25:11 BDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18040" started-at="2020-03-22T22:09:12 BDT" finished-at="2020-03-22T22:09:30 BDT">
+    <test name="Default test" duration-ms="24323" started-at="2020-03-22T22:24:47 BDT" finished-at="2020-03-22T22:25:11 BDT">
       <class name="com.RunLogin.RunLogin">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.RunLogin.RunLogin@39fcbef6]" name="openBrowser" is-config="true" duration-ms="8943" started-at="2020-03-22T22:09:12 BDT" finished-at="2020-03-22T22:09:21 BDT">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.RunLogin.RunLogin@39fcbef6]" name="openBrowser" is-config="true" duration-ms="12068" started-at="2020-03-22T22:24:47 BDT" finished-at="2020-03-22T22:24:59 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="loginPositiveTest()[pri:0, instance:com.RunLogin.RunLogin@39fcbef6]" name="loginPositiveTest" duration-ms="8812" started-at="2020-03-22T22:09:21 BDT" finished-at="2020-03-22T22:09:30 BDT">
+        <test-method status="PASS" signature="loginPositiveTest()[pri:0, instance:com.RunLogin.RunLogin@39fcbef6]" name="loginPositiveTest" duration-ms="11972" started-at="2020-03-22T22:24:59 BDT" finished-at="2020-03-22T22:25:11 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPositiveTest -->
