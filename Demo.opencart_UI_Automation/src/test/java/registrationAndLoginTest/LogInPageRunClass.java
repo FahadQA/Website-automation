@@ -55,7 +55,7 @@ public class LogInPageRunClass {
     	String expecteInvalidEmaildMessage = "Warning: No match for E-Mail Address and/or Password.";
 		String actualInvalidEmaildMessage = login.InvalidEmailAlert.getText();
 		
-		assertEquals(expecteInvalidEmaildMessage, actualInvalidEmaildMessage);
+	    assertEquals(expecteInvalidEmaildMessage, actualInvalidEmaildMessage);
 		
 		System.out.println("cannot login due to: "+ login.InvalidEmailAlert.getText());
     	

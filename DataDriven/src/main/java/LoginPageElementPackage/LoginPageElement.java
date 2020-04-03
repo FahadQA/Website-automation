@@ -19,7 +19,11 @@ public class LoginPageElement {
 	By EmailTextBoxXpath = By.xpath("//INPUT[@id='input-email']");
 	By PasswordTextBoxXpath = By.xpath("//INPUT[@id='input-password']");
 	By SubmitButtonXpath = By.xpath("//INPUT[@type='submit']");
-	//By Xpath = By.xpath(""); 
+	By UserAccountIdentityXpath = By.xpath("(//H2[text()='My Account'])[1]"); 
+	By IDorPasswordIsWrongXpath = By.xpath("//DIV[@class='alert alert-danger alert-dismissible']"); 
+	By LogoutButtonXpath = By.xpath("//A[@href='https://demo.opencart.com/index.php?route=account/logout'][text()='Logout']");
+	
+	
 	
 	
 	public void clickMyaccount()
@@ -37,12 +41,15 @@ public class LoginPageElement {
 	
 	public void enterEmail(String email)
 	{
+		driver.findElement(EmailTextBoxXpath).clear();
 		driver.findElement(EmailTextBoxXpath).sendKeys(email);
 		System.out.println("email is  given");
+		
 	}
 	
 	public void enterPassword(String password)
 	{
+		driver.findElement(PasswordTextBoxXpath).clear();
 		driver.findElement(PasswordTextBoxXpath).sendKeys(password);
 		System.out.println("password is given");
 	}
@@ -53,11 +60,27 @@ public class LoginPageElement {
 		System.out.println("submit button is clicked");
 	}
 	
-//	public void ()
-//	{
-//		driver.findElement().click();
-//	}
+	public boolean UserAccountIdentity()
+	{
+		driver.findElement(UserAccountIdentityXpath).getText();
+		return true;
+	}
 	
+	public void clickLogoutButton()
+	{
+		driver.findElement(LogoutButtonXpath).click();
+		System.out.println("logout button is clicked");
+	}
+	
+
+
+
+	public void IDorPasswordIsWrong() {
+		// TODO Auto-generated method stub
+		driver.findElement(IDorPasswordIsWrongXpath).getText();
+		
+		
+	}
 	
 	
 
