@@ -25,9 +25,9 @@ public class RunLogin  {
 	
 	Xls_Reader reader = new Xls_Reader("E:\\peopleNtech\\WebAutomationGit\\Website-automation\\DataDriven\\src\\test\\java\\com\\UserData\\UserInfoData.xlsx");
 	
-//	
-//	String email = reader.getCellData("UserDataInfo", "User email", 2);
-//	String password = reader.getCellData("UserDataInfo", "User Passsword", 2);
+
+	String email = reader.getCellData("UserDataInfo", "User email", 2);
+	String password = reader.getCellData("UserDataInfo", "User Passsword", 2);
 	
 	public boolean userIsLoggedIn()
 	{
@@ -41,10 +41,10 @@ public class RunLogin  {
 	
 	public boolean userIDorPasswordIsWrong()
 	{
-		//String expecteInvalidEmaildMessage = "Warning: No match for E-Mail Address and/or Password.";
-		lp.IDorPasswordIsWrong();
-	    //assertEquals(expecteInvalidEmaildMessage, actualInvalidEmaildMessage);
-	    System.out.println(lp.IDorPasswordIsWrong());
+		String expecteInvalidEmaildMessage = "Warning: No match for E-Mail Address and/or Password.";
+		String actualInvalidEmaildMessage = lp.IDorPasswordIsWrong();
+	    assertEquals(expecteInvalidEmaildMessage, actualInvalidEmaildMessage);
+	   
 	    return true;
 		
 	}
@@ -56,20 +56,20 @@ public class RunLogin  {
 	{
 		driver.get("https://demo.opencart.com/");
 		System.out.println("browser open");
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		lp.clickMyaccount();
-		lp.clickLoginButton();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
 	// ====login positive test====
 	@Test
-	public void loginPositiveTest() throws InterruptedException
+	public void loginPositiveTest() 
 	{
 		lp.clickMyaccount();
 		lp.clickLoginButton();
-//		lp.enterEmail(dc.Email());
-//		lp.enterPassword(dc.Password());
+		lp.enterEmail("d1@mail.com");
+		lp.enterPassword("12341234");
 		lp.clickSubmitButton();
+		lp.clickMyaccount();
+		lp.clickLogoutButton();
 //		Thread.sleep(3000L);
 //		lp.clickMyaccount();
 //		lp.clickLogoutButton();
@@ -87,33 +87,39 @@ public class RunLogin  {
 		int rowCount = reader.getRowCount("UserDataInfo");
 		System.out.println(rowCount);
 		
-		
+		lp.clickMyaccount();
+		lp.clickLoginButton();
 		for(int rowNum = 2; rowNum<=rowCount; rowNum++)
 		{
 			 String Email = reader.getCellData("UserDataInfo", "User email", rowNum);
-			 System.out.println("row number is: "+rowNum);
+			 System.out.println("email is: "+rowNum);
 			 String Passsword = reader.getCellData("UserDataInfo", "User Passsword", rowNum);
-			 System.out.println(Passsword);
+			 System.out.println("Password is"+Passsword);
 			
 			lp.enterEmail(Email);
 			lp.enterPassword(Passsword);
 			lp.clickSubmitButton();
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 			
-			if(userIDorPasswordIsWrong()==(lp.IDorPasswordIsWrong()))
+			if(driver.getPageSource().contains(lp.UserAccountIdentity()))
 			{
-				
-				System.out.println("invalid id");
+				System.out.println(lp.UserAccountIdentity());
+				lp.clickMyaccount();
+				lp.clickLogoutButton();
+				lp.clickMyaccount();
+				lp.clickLoginButton();
+			}
+			else if(driver.getPageSource().contains(lp.IDorPasswordIsWrong()))
+			{
+				System.out.println(lp.IDorPasswordIsWrong());
+			}
+			else 
+			{
+				System.out.println("nothing!!!!!");
+			}
 			
-			}
-			else if (userIsLoggedIn()==lp.UserAccountIdentity())
-			{
-				System.out.println("nothing found valid id");
-			}
-			else
-			{
-				System.out.println("nothing found");
-			}
+			
+			
 		
        	}
 	

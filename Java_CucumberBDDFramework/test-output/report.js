@@ -4,10 +4,10 @@ formatter.feature({
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "name": "positive login test",
+formatter.background({
+  "name": "Common steps",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Background"
 });
 formatter.step({
   "name": "user is in login page",
@@ -45,6 +45,71 @@ formatter.step({
 });
 formatter.match({
   "location": "StepDef.stepDef.user_is_in_home_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user clicks in Customers from menu",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "StepDef.stepDef.user_clicks_in_Customers_from_menu()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user select customers from Customers menu",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "StepDef.stepDef.user_select_customers_from_Customers_menu()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "search user by email",
+  "description": "",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "name": "user is in search customer page",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDef.stepDef.user_is_in_search_customer_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user provide registered email id",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "StepDef.stepDef.user_provide_registered_email_id()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on search button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "StepDef.stepDef.user_click_on_search_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user info is displayed",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDef.stepDef.user_info_is_displayed()"
 });
 formatter.result({
   "status": "passed"

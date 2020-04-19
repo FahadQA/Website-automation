@@ -60,10 +60,11 @@ public class LoginPageElement {
 		System.out.println("submit button is clicked");
 	}
 	
-	public boolean UserAccountIdentity()
+	public String UserAccountIdentity()
 	{
-		driver.findElement(UserAccountIdentityXpath).getText();
-		return true;
+		String UserAccountIdentity = driver.findElement(UserAccountIdentityXpath).getText();
+		return UserAccountIdentity;
+		
 	}
 	
 	public void clickLogoutButton()
@@ -75,12 +76,14 @@ public class LoginPageElement {
 
 
 
-	public void IDorPasswordIsWrong() {
+	public String IDorPasswordIsWrong() {
 		// TODO Auto-generated method stub
-		driver.findElement(IDorPasswordIsWrongXpath).getText();
+		String IDorPasswordIsWrong = driver.findElement(IDorPasswordIsWrongXpath).getText();
+		return IDorPasswordIsWrong;
 		
 		
 	}
+	
 	
 	
 

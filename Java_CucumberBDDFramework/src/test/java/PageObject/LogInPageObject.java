@@ -6,20 +6,20 @@ import org.openqa.selenium.support.PageFactory;
 
 import junit.framework.Assert;
 
-public class pageObject {
+public class LogInPageObject {
 	
 	WebDriver driver;
 	
-	public pageObject(WebDriver driver)
+	public LogInPageObject(WebDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	By EmailTextBoxXpath = By.xpath("//INPUT[@id='input-email']");
-	By PasswordTextBoxXpath = By.xpath("//INPUT[@id='input-password']");
-	By SubmitButtonXpath = By.xpath("//INPUT[@type='submit']");
-	By UserAccountIdentityXpath = By.xpath("(//H2[text()='My Account'])[1]");
+	By EmailTextBoxXpath = By.xpath("//INPUT[@id='Email']");
+	By PasswordTextBoxXpath = By.xpath("//INPUT[@id='Password']");
+	By SubmitButtonXpath = By.xpath("//INPUT[@class='button-1 login-button']");
+	By UserAccountIdentityXpath = By.xpath("(//H1[text()='Dashboard'])[1]");   
 
 	
 	public void enterEmail(String email)
@@ -44,8 +44,8 @@ public class pageObject {
 	}
 	
 	public String UserAccountIdentity() {
-		// TODO Auto-generated method stub
-		String message = driver.findElement(UserAccountIdentityXpath).getText();
+		
+		String message = driver.getTitle();
 		return message;
 		
 		

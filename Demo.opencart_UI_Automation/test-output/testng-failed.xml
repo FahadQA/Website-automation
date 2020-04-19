@@ -3,14 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="registrationAndLoginTest.RegistrationPageRunClass">
+      <class name="run">
         <methods>
-          <include name="beforeTest"/>
-          <include name="Password_Must_be_Between_4_or_20_charecter_Negative_Test"/>
-          <include name="TelephoneNo_More_Than_32_or_Less_Than_0_Negative_Test"/>
-          <include name="Password_is_Not_Matching_With_Confirm_Password_Text_Field_Negative_Test"/>
+          <include name="openbroweser"/>
+          <include name="ruun"/>
         </methods>
-      </class> <!-- registrationAndLoginTest.RegistrationPageRunClass -->
+      </class> <!-- run -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
