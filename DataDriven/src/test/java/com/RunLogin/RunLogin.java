@@ -20,7 +20,7 @@ public class RunLogin  {
 	WebDriver driver = new ChromeDriver();
 	
 	LoginPageElement lp = new LoginPageElement(driver);
-	DataReadController dc = new DataReadController();
+	//DataReadController dc = new DataReadController();
 	
 	
 	Xls_Reader reader = new Xls_Reader("E:\\peopleNtech\\WebAutomationGit\\Website-automation\\DataDriven\\src\\test\\java\\com\\UserData\\UserInfoData.xlsx");
@@ -65,11 +65,12 @@ public class RunLogin  {
 	{
 		lp.clickMyaccount();
 		lp.clickLoginButton();
-		lp.enterEmail("d1@mail.com");
-		lp.enterPassword("12341234");
+		lp.enterEmail(email);
+		lp.enterPassword(password);
 		lp.clickSubmitButton();
-		lp.clickMyaccount();
-		lp.clickLogoutButton();
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+//		lp.clickMyaccount();
+//		lp.clickLogoutButton();
 //		Thread.sleep(3000L);
 //		lp.clickMyaccount();
 //		lp.clickLogoutButton();
