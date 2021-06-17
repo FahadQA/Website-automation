@@ -66,6 +66,7 @@ public class RunLogin  {
 		lp.clickMyaccount();
 		lp.clickLoginButton();
 		lp.enterEmail(email);
+		System.out.println(email);
 		lp.enterPassword(password);
 		lp.clickSubmitButton();
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
